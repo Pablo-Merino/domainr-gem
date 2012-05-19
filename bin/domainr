@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+require 'domainr'
+trap('INT') {
+  exit
+}
+
+Domainr::Console.new
