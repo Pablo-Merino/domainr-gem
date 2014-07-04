@@ -2,7 +2,7 @@ module Domainr
   class Operations
 
     def self.info(domain)
-      response = JSON.parse(Net::HTTP.get(URI("https://domai.nr/api/json/info?q=#{domain}")))
+      response = JSON.parse(Net::HTTP.get(URI("https://domai.nr/api/json/info?client_id=ruby_pablo_merino&q=#{domain}")))
       puts "Domain: #{response['domain']}"
 
       response['registrars'].each do |result|
@@ -17,7 +17,7 @@ module Domainr
 
     def self.search(query)
       @responses_array = Array.new
-      response = JSON.parse(Net::HTTP.get(URI("https://domai.nr/api/json/search?q=#{query}")))
+      response = JSON.parse(Net::HTTP.get(URI("https://domai.nr/api/json/search?client_id=ruby_pablo_merino&q=#{query}")))
       print_domains response
       catch (:done) do
         loop {
