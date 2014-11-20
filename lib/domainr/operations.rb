@@ -2,13 +2,13 @@ module Domainr
   class Operations
 
     def self.info(domain)
-      response = JSON.parse(Net::HTTP.get(URI("https://domai.nr/api/json/info?client_id=ruby_pablo_merino&q=#{domain}")))
+      response = JSON.parse(Net::HTTP.get(URI("https://domainr.com/api/json/info?client_id=ruby_pablo_merino&q=#{domain}")))
       puts "Domain: #{response['domain']}"
 
       response['registrars'].each do |result|
         puts "Registrar: #{result['name']} (#{result['registrar']})"
       end
-      
+
       puts "TLD: #{response['tld']['domain']}"
       puts "IANA URL: #{response['tld']['iana_url']}"
       puts "Wikipedia URL: #{response['tld']['wikipedia_url']}"
@@ -17,7 +17,7 @@ module Domainr
 
     def self.search(query)
       @responses_array = Array.new
-      response = JSON.parse(Net::HTTP.get(URI("https://domai.nr/api/json/search?client_id=ruby_pablo_merino&q=#{query}")))
+      response = JSON.parse(Net::HTTP.get(URI("https://domainr.com/api/json/search?client_id=ruby_pablo_merino&q=#{query}")))
       print_domains response
       catch (:done) do
         loop {
@@ -54,7 +54,7 @@ module Domainr
             when 'register'
               puts 'Opening register window...'
               system "open #{response['register_url']}"
-              
+
             when 'back'
               throw :done
           end

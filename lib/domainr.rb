@@ -8,8 +8,8 @@ module Domainr
   class Console
     def initialize
       loop {
-        buf = ::Readline::readline('domai.nr> ', true)
-        enter(buf)        
+        buf = ::Readline::readline('domainr> ', true)
+        enter(buf)
       }
 
     end
@@ -27,15 +27,15 @@ module Domainr
           Operations.search(args)
         when 'info'
           Operations.info(args)
-        
+
         else
           puts "Command not found"
       end
-      
+
 
     end
 
-    
+
   end
 end
 

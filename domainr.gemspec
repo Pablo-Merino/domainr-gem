@@ -1,8 +1,8 @@
 Gem::Specification.new do |s|
   s.name    = 'Domainr'
   s.version = '1.1'
-  s.summary = 'Domai.nr is a web page which allows you to search nice domains'
-  s.description = 'Domai.nr (http://domai.nr) is a web page which allows you to search nice domains. This is a gem which uses it\'s API'
+  s.summary = 'Domainr is a web page which allows you to search nice domains'
+  s.description = 'Domainr (https://domainr.com) is a web page which allows you to search nice domains. This is a gem which uses it\'s API'
 
   s.authors  = ['Pablo Merino']
   s.email    = ['pablo.perso1995@gmail.com']
